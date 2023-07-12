@@ -7,7 +7,7 @@ class Team:
         self.key = attributes.get('team_key')
         self.id = as_int(attributes.get('team_id'))
         self.name = attributes.get('name')
-        self.priority = as_int(attributes.get('waiver_priority'))
+        #self.priority = as_int(attributes.get('waiver_priority'))
         self.faab = as_int(attributes.get('faab_balance'))
         self.moves = as_int(attributes.get('number_of_moves'))
         self.trades = as_int(attributes.get('number_of_trades'))
@@ -103,7 +103,7 @@ class Player:
         self.name = attributes['name']['full']
         self.first_name = attributes['name']['first']
         self.last_name = attributes['name']['last']
-        self.nfl_team = attributes.get('editorial_team_abbr').upper()
+        self.nhl_team = attributes.get('editorial_team_abbr').upper()
         self.team_name = attributes.get('editorial_team_full_name')
         self.number = as_int(attributes.get('uniform_number'))
         self.position = attributes.get('display_position')

@@ -1,6 +1,6 @@
 from yfantasy_api.api import YahooFantasyApi
 
-league_id = 17457  # This should be the id of the league you are querying
+league_id = 874  # This should be the id of the league you are querying
 game_id = 'nhl'    # This should be the id of the game you are querying
 team_id = 1        # This should be the id of the team you are querying
 

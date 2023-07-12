@@ -122,13 +122,18 @@ class LeagueApi:
         self.path += '/settings'
         return TerminalApi(self)
 
-    def standings(self):
+    def standings(self, week=None):
         """Updates the path to include the `standings` sub-resource
 
         Returns a TerminalApi object that provides a `get()` call to
         invoke the query.
         """
         self.path += '/standings'
+
+        if week:
+            self.path += f';week={week}'
+
+        print(self.path)    
         return TerminalApi(self)
 
     def teams(self):

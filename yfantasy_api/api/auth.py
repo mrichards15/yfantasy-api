@@ -85,8 +85,8 @@ class AuthenticationService:
         return self.__expires_by
 
     def __set_credentials(self):
-        self.__client_id = os.getenv('CLIENT_ID')
-        self.__client_secret = os.getenv('CLIENT_SECRET')
+        self.__client_id = "dj0yJmk9OVM4MU9sQTF6QlpVJmQ9WVdrOVpsQllURXBGYjJRbWNHbzlNQT09JnM9Y29uc3VtZXJzZWNyZXQmc3Y9MCZ4PTlh"
+        self.__client_secret = "7b2ce53275b5140bc1a32be451910dfb6e4e9077"
 
     def __set_tokens(self):
         if os.path.exists(TOKEN_FILE):

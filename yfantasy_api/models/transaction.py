@@ -64,6 +64,12 @@ class Pick:
         self.original_team_name = json['original_team_name']
         self.round = json['round']
 
+class PlayerTraded:
+    #def __init__(self, player_json, transaction_json):
+    def __init__(self, json):
+        self.pInfo = Player(json)
+        json = json[1]['transaction_data']
+        self.source_team_key = json[0]['source_team_key']
 
 class Trade(Transaction):
     def __init__(self, json):
@@ -75,7 +81,12 @@ class Trade(Transaction):
         self.tradee_team_name = info['tradee_team_name']
         self.traded_picks = [Pick(d['pick']) for d in info.get('picks', [])]
         json = json[1]['players']
-        print(json)
+        if type(json) == list:
+            self.players_traded = []
+        else:
+            self.players_traded = [PlayerTraded(json[str(d)]['player']) for d in range(json['count'])]
+        #self.tradee_players = [PlayerTraded(json[str(d)]['player'], json[str(d)]['transaction_data']) for d in range(json['count'])]
+        #print(json)
         if type(json) == list:
             self.traded_players = []
         else:
